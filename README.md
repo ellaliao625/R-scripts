@@ -1,6 +1,6 @@
 ST 552 homework5 questions
 
-#(c) 
+(c) 
 t1 <- summary(fit)$coef["money", 3]
 nreps <- 1000
 tstat <- rep(0, nreps)
@@ -12,11 +12,12 @@ for (i in 1:nreps){
 
 mean(abs(tstat) > abs(t1))
 
-#(d)
+(d)
 hist(tstat, freq = FALSE, main = "Histogram of t-statistics")
 
-#(e)
+(e)
 grid <- seq(-3, 3, length = 300)
 df <- fit$df.residual
-hist(tstat, freq = FALSE, main = "Histogram of t-statistics")
+hist(tstat, freq = FALSE)
 lines(grid, dt(grid, df), type = "l")
+
